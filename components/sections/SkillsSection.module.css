@@ -1,0 +1,479 @@
+/* ==================================================
+   SKILLS SECTION - MODERN SLEEK DESIGN
+   Heavy Animations + Increased Information
+   ================================================== */
+
+/* Main Skills Container */
+.skills {
+  padding: 8rem 2rem;
+  background: var(--color-bg-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated Hexagon Grid Background */
+.skills::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(102, 126, 234, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 75% 75%, rgba(240, 147, 251, 0.08) 0%, transparent 40%),
+    linear-gradient(90deg, transparent 49.5%, rgba(102, 126, 234, 0.05) 50%, transparent 50.5%),
+    linear-gradient(0deg, transparent 49.5%, rgba(102, 126, 234, 0.05) 50%, transparent 50.5%);
+  background-size: 100% 100%, 100% 100%, 80px 80px, 80px 80px;
+  animation: gridPulse 25s ease-in-out infinite;
+  opacity: 1;
+  z-index: 0;
+}
+
+@keyframes gridPulse {
+  0%, 100% {
+    opacity: 0.6;
+    background-position: 0 0, 0 0, 0 0, 0 0;
+  }
+  50% {
+    opacity: 1;
+    background-position: 0 0, 0 0, 40px 40px, 40px 40px;
+  }
+}
+
+/* Floating Particles */
+.skills::after {
+  content: '';
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(240, 147, 251, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: particleFloat 20s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes particleFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -30px) scale(1.1);
+  }
+  66% {
+    transform: translate(-30px, 30px) scale(0.9);
+  }
+}
+
+/* Container */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ==================
+   SECTION TITLE
+   ================== */
+
+.sectionTitle {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  text-align: center;
+  margin: 0 0 1rem;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #667eea 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 10s ease-in-out infinite, titleBounce 4s ease-in-out infinite;
+  position: relative;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes titleBounce {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-5px) scale(1.01);
+  }
+}
+
+.sectionTitle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(240, 147, 251, 0.1) 0%, transparent 70%);
+  animation: titleGlow 3s ease-in-out infinite;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(30px);
+}
+
+@keyframes titleGlow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+/* ==================
+   CATEGORY FILTERS
+   ================== */
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 3rem 0;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.filterButton {
+  padding: 0.875rem 2rem;
+  background: rgba(30, 41, 59, 0.5);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(102, 126, 234, 0.2);
+  border-radius: 50px;
+  color: var(--color-text-secondary);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  position: relative;
+  overflow: hidden;
+  font-family: inherit;
+  animation: filterReveal 0.6s cubic-bezier(0.19, 1, 0.22, 1) backwards;
+}
+
+.filterButton:nth-child(1) { animation-delay: 0.1s; }
+.filterButton:nth-child(2) { animation-delay: 0.15s; }
+.filterButton:nth-child(3) { animation-delay: 0.2s; }
+.filterButton:nth-child(4) { animation-delay: 0.25s; }
+.filterButton:nth-child(5) { animation-delay: 0.3s; }
+.filterButton:nth-child(6) { animation-delay: 0.35s; }
+
+@keyframes filterReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.filterButton::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(240, 147, 251, 0.2));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.filterButton::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease;
+}
+
+.filterButton:hover {
+  transform: translateY(-3px);
+  border-color: rgba(102, 126, 234, 0.5);
+  color: var(--color-text-primary);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+}
+
+.filterButton:hover::before {
+  opacity: 1;
+}
+
+.filterButton:hover::after {
+  width: 300px;
+  height: 300px;
+}
+
+.filterButton.active {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.3), rgba(240, 147, 251, 0.3));
+  border-color: rgba(102, 126, 234, 0.8);
+  color: white;
+  box-shadow: 
+    0 10px 30px rgba(102, 126, 234, 0.3),
+    0 0 40px rgba(102, 126, 234, 0.2),
+    inset 0 0 20px rgba(255, 255, 255, 0.1);
+  animation: activeButtonPulse 2s ease-in-out infinite;
+}
+
+@keyframes activeButtonPulse {
+  0%, 100% {
+    box-shadow: 
+      0 10px 30px rgba(102, 126, 234, 0.3),
+      0 0 40px rgba(102, 126, 234, 0.2),
+      inset 0 0 20px rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow: 
+      0 12px 35px rgba(102, 126, 234, 0.4),
+      0 0 60px rgba(102, 126, 234, 0.3),
+      inset 0 0 25px rgba(255, 255, 255, 0.15);
+  }
+}
+
+.filterButton.active::before {
+  opacity: 1;
+}
+
+/* ==================
+   SKILLS GRID
+   ================== */
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
+  position: relative;
+}
+
+/* ==================
+   SKILL CARD
+   ================== */
+
+.skillCard {
+  background: rgba(30, 41, 59, 0.5);
+  -webkit-backdrop-filter: blur(25px);
+  backdrop-filter: blur(25px);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid rgba(102, 126, 234, 0.15);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  animation: cardReveal 0.8s cubic-bezier(0.19, 1, 0.22, 1) backwards;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+/* Staggered card reveal */
+.skillCard:nth-child(1) { animation-delay: 0.1s; }
+.skillCard:nth-child(2) { animation-delay: 0.15s; }
+.skillCard:nth-child(3) { animation-delay: 0.2s; }
+.skillCard:nth-child(4) { animation-delay: 0.25s; }
+.skillCard:nth-child(5) { animation-delay: 0.3s; }
+.skillCard:nth-child(6) { animation-delay: 0.35s; }
+.skillCard:nth-child(7) { animation-delay: 0.4s; }
+.skillCard:nth-child(8) { animation-delay: 0.45s; }
+.skillCard:nth-child(9) { animation-delay: 0.5s; }
+.skillCard:nth-child(10) { animation-delay: 0.55s; }
+
+@keyframes cardReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95) rotateX(10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateX(0deg);
+  }
+}
+
+/* Animated border gradient */
+.skillCard::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: conic-gradient(
+    from 0deg,
+    rgba(102, 126, 234, 0) 0deg,
+    rgba(102, 126, 234, 0.5) 90deg,
+    rgba(240, 147, 251, 0.5) 180deg,
+    rgba(245, 87, 108, 0.5) 270deg,
+    rgba(102, 126, 234, 0) 360deg
+  );
+  border-radius: 22px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  animation: borderRotate 8s linear infinite;
+  z-index: -1;
+  filter: blur(8px);
+}
+
+@keyframes borderRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Gradient overlay on hover */
+.skillCard::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(240, 147, 251, 0.1));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 20px;
+}
+
+.skillCard:hover {
+  transform: translateY(-12px) translateZ(20px) scale(1.02);
+  border-color: rgba(102, 126, 234, 0.4);
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.4),
+    0 10px 30px rgba(102, 126, 234, 0.3),
+    0 0 60px rgba(102, 126, 234, 0.2),
+    inset 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+.skillCard:hover::before {
+  opacity: 1;
+}
+
+.skillCard:hover::after {
+  opacity: 1;
+}
+
+/* Add floating animation to cards */
+.skillCard:nth-child(odd) {
+  animation: cardReveal 0.8s cubic-bezier(0.19, 1, 0.22, 1) backwards,
+             cardFloat 6s ease-in-out infinite;
+}
+
+.skillCard:nth-child(even) {
+  animation: cardReveal 0.8s cubic-bezier(0.19, 1, 0.22, 1) backwards,
+             cardFloat 6s ease-in-out infinite;
+  animation-delay: 0.1s, 3s;
+}
+
+@keyframes cardFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* ==================
+   EMPTY STATE
+   ================== */
+
+.emptyState {
+  text-align: center;
+  padding: 4rem 2rem;
+  animation: fadeIn 0.6s ease;
+}
+
+.emptyState p {
+  font-size: 1.25rem;
+  color: var(--color-text-tertiary);
+  margin: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ==================
+   RESPONSIVE DESIGN
+   ================== */
+
+@media (max-width: 1024px) {
+  .skillsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills {
+    padding: 6rem 1.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .filters {
+    gap: 0.75rem;
+    margin: 2rem 0;
+  }
+
+  .filterButton {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+  }
+
+  .skillsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .skillCard {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills {
+    padding: 5rem 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .filterButton {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.8125rem;
+  }
+
+  .skillCard {
+    padding: 1.25rem;
+  }
+}
+
+/* ==================
+   ADDITIONAL STYLES
+   ================== */
+
+/* Badge styles are handled in the SkillBar component */

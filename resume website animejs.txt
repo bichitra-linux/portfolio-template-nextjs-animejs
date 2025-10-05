@@ -1,0 +1,214 @@
+# AI Prompt: Senior Frontend Developer - Animated Resume Website
+
+## Project Overview
+Build an engaging, fully client-side animated resume website using Anime.js with sophisticated animations and interactive elements.
+
+## Technical Specifications
+
+### Core Requirements
+TECH STACK: HTML5, CSS3, JavaScript (ES6+), Anime.js
+ANIMATION: Anime.js for all animations and transitions
+RESPONSIVE: Mobile-first design approach
+PERFORMANCE: Optimized animations (60fps target)
+ACCESSIBILITY: WCAG 2.1 AA compliant
+
+### Feature Implementation Details
+
+#### 1. Animated Timeline System
+Timeline Data Structure:
+- Work history entries with company, position, period
+- Education history with institution, degree, period
+- Skills and achievements for each entry
+- Interactive date markers and connections
+
+#### 2. Animation Sequences
+Planned Animation Scenarios:
+- Hero section: Typing effect for name/title
+- Skill bars: Progressive filling with percentage reveal
+- Timeline entries: Staggered slide-in with fade effects
+- Portfolio items: 3D flip on hover
+- Contact form: Input field focus animations
+
+#### 3. Interactive Elements
+Hover Effect Classes:
+- .hover-lift: TranslateY transform on hover
+- .hover-glow: Box-shadow glow effect
+- .hover-scale: Smooth scaling transformations
+- .hover-color: Color transition effects
+
+## Implementation Priorities
+
+### Phase 1: Foundation & Structure (Week 1)
+1. Project Setup
+   - HTML5 semantic structure
+   - CSS3 variables for theming
+   - Mobile-responsive grid system
+   - Anime.js integration and configuration
+
+2. Static Content
+   - Resume data structure in JSON
+   - Basic styling and layout
+   - Accessibility features (ARIA labels, keyboard navigation)
+
+### Phase 2: Core Animations (Week 2)
+1. Entry Animations
+   - Page load sequence (hero → about → skills)
+   - Scroll-triggered animations using Intersection Observer
+   - Smooth page transitions
+
+2. Timeline Animation
+   - Vertical timeline with connecting lines
+   - Staggered entry of timeline items
+   - Interactive date markers
+
+### Phase 3: Polish & Optimization (Week 3)
+1. Advanced Interactions
+   - Skill bar animations on scroll
+   - Hover effects with physics-based animations
+   - Micro-interactions (button clicks, form fields)
+
+2. Performance Optimization
+   - Animation performance testing
+   - Reduced motion preferences
+   - Browser compatibility fixes
+
+## Code Quality Standards
+
+### Architecture Pattern
+Recommended Structure:
+src/
+├── index.html
+├── css/
+│   ├── reset.css
+│   ├── variables.css
+│   ├── layout.css
+│   ├── animations.css
+│   └── main.css
+├── js/
+│   ├── config/
+│   │   ├── anime-config.js
+│   │   └── constants.js
+│   ├── modules/
+│   │   ├── timeline-animations.js
+│   │   ├── skill-animations.js
+│   │   ├── scroll-animations.js
+│   │   └── hover-effects.js
+│   ├── utils/
+│   │   ├── dom-helpers.js
+│   │   ├── animation-helpers.js
+│   │   └── performance.js
+│   └── main.js
+└── data/
+    └── resume-data.json
+
+### Performance Requirements
+- First Contentful Paint: < 1.5 seconds
+- Animation Performance: 60fps on mid-range devices
+- Bundle Size: < 500KB total (including Anime.js)
+- Lighthouse Score: > 90 for performance, accessibility, best practices
+
+## Key Technical Decisions
+
+### Animation Strategy
+Animation Configuration:
+- Duration: 1000ms base
+- Easing: easeOutElastic for bounce effects
+- Stagger delays for sequential animations
+- Opacity and transform-based animations for performance
+
+Scroll-triggered animations using Intersection Observer API with threshold-based triggers for smooth user experience.
+
+### Responsive Design Approach
+CSS Variables for Consistent Animations:
+- --animation-duration: 0.8s (mobile) / 1s (desktop)
+- --stagger-delay: 0.1s (mobile) / 0.15s (desktop)
+- --easing-primary: cubic-bezier(0.25, 0.46, 0.45, 0.94)
+- --easing-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55)
+
+Mobile-first media queries with animation timing adjustments for different viewports.
+
+## UI/UX Specifications
+
+### Section Layout
+1. Hero Section
+   - Animated name typing effect
+   - Profession title fade-in
+   - Background pattern animation
+   - Scroll indicator bounce
+
+2. About Section
+   - Profile picture scale-in animation
+   - Text paragraph sequential reveal
+   - Social links hover effects
+
+3. Skills Section
+   - Skill bars progressive fill
+   - Percentage counter animation
+   - Category filter animations
+
+4. Timeline Section
+   - Vertical timeline with connector lines
+   - Card flip animations on hover
+   - Date marker pulsing effects
+
+5. Portfolio Section
+   - Project card staggered entrance
+   - Image hover zoom effects
+   - Technology tag animations
+
+### Interactive Elements
+- Navigation: Smooth scroll with active state animations
+- Buttons: Ripple effect on click
+- Form Elements: Focus animations with floating labels
+- Loading States: Skeleton animations for content
+
+## Testing Strategy
+
+### Browser Compatibility
+- Chrome 90+: Full feature support
+- Firefox 88+: Full feature support
+- Safari 14+: Full feature support
+- Edge 90+: Full feature support
+
+### Performance Testing
+- [ ] Animation smoothness on low-end devices
+- [ ] Memory usage during extended interactions
+- [ ] Scroll performance with multiple animations
+- [ ] Reduced motion preference handling
+
+### Accessibility Testing
+- [ ] Keyboard navigation through animated elements
+- [ ] Screen reader compatibility with dynamic content
+- [ ] Color contrast ratios maintained during animations
+- [ ] Focus management during page transitions
+
+## Delivery Checklist
+
+### Core Functionality
+- [ ] Animated timeline with work/education history
+- [ ] Smooth text transitions between sections
+- [ ] Interactive skill bar animations
+- [ ] Hover effects on all interactive elements
+
+### User Experience
+- [ ] Mobile-responsive design
+- [ ] Smooth scrolling navigation
+- [ ] Performance-optimized animations
+- [ ] Accessible to users with disabilities
+
+### Technical Quality
+- [ ] Clean, maintainable code structure
+- [ ] Cross-browser compatibility
+- [ ] SEO-optimized semantic HTML
+- [ ] Progressive enhancement approach
+
+## Senior Developer Notes
+Focus on storytelling - use animations to guide the user through your professional journey. Prioritize performance - animations should enhance, not hinder, the user experience. Maintain accessibility - ensure animations don't exclude users with disabilities.
+
+Start with the mobile experience - design animations that work well on touch devices. Use CSS transforms for better performance than layout-changing properties.
+
+Implement reduced motion preferences - respect users who prefer less animation through @media (prefers-reduced-motion: reduce).
+
+Consider the narrative flow - time animations to create a compelling story of your career progression rather than random visual effects.
+
+The resume should feel like an interactive portfolio that demonstrates both your technical skills and your design sensibility through thoughtful, purposeful animations.

@@ -1,0 +1,488 @@
+/* Card Component with 3D Tilt */
+
+/* Base Card with Perspective */
+.card {
+  background: rgba(30, 41, 59, 0.6);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  position: relative;
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+/* Shine Overlay Effect */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left 0.6s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.card:hover::before {
+  left: 100%;
+}
+
+/* Card Variants */
+
+/* Default */
+.default {
+  border: 1px solid var(--color-border, #e5e7eb);
+}
+
+/* Elevated with 3D Lift */
+.elevated {
+  box-shadow: var(--shadow-xl);
+}
+
+.elevated:hover {
+  box-shadow: 
+    0 25px 50px rgba(102, 126, 234, 0.3),
+    0 0 0 1px rgba(102, 126, 234, 0.5);
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* Outlined with Gradient Border */
+.outlined {
+  border: 2px solid transparent;
+  background-image: 
+    linear-gradient(rgba(30, 41, 59, 0.6), rgba(30, 41, 59, 0.6)),
+    var(--gradient-primary);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: var(--shadow-glow);
+}
+
+/* Flat */
+.flat {
+  box-shadow: none;
+  border: none;
+  background: rgba(30, 41, 59, 0.4);
+}
+
+/* Gradient Background */
+.gradient {
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+}
+
+.gradient .cardTitle,
+.gradient .cardDescription {
+  color: white;
+}
+
+/* Enhanced Glass Effect */
+.glass {
+  background: rgba(30, 41, 59, 0.3);
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
+  border: 1px solid rgba(102, 126, 234, 0.3);
+}
+
+/* Interactive Card with 3D Tilt */
+.interactive {
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.interactive:hover {
+  transform: translateY(-8px) rotateX(5deg);
+  box-shadow: 
+    0 25px 50px rgba(102, 126, 234, 0.3),
+    0 0 40px rgba(102, 126, 234, 0.2);
+  border-color: var(--color-primary);
+}
+
+.interactive:active {
+  transform: translateY(-4px) rotateX(2deg);
+}
+
+/* Card Sections */
+
+/* Card Header */
+.cardHeader {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--color-border, #e5e7eb);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cardHeader.noBorder {
+  border-bottom: none;
+}
+
+/* Card Title */
+.cardTitle {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text, #1f2937);
+  line-height: 1.4;
+}
+
+/* Card Subtitle */
+.cardSubtitle {
+  margin: 0.25rem 0 0;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--color-text-light, #6b7280);
+  line-height: 1.5;
+}
+
+/* Card Body */
+.cardBody {
+  padding: 1.5rem;
+}
+
+.cardBody.compact {
+  padding: 1rem;
+}
+
+.cardBody.spacious {
+  padding: 2rem;
+}
+
+/* Card Description */
+.cardDescription {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text, #1f2937);
+}
+
+/* Card Footer */
+.cardFooter {
+  padding: 1.5rem;
+  border-top: 1px solid var(--color-border, #e5e7eb);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cardFooter.noBorder {
+  border-top: none;
+}
+
+.cardFooter.center {
+  justify-content: center;
+}
+
+.cardFooter.end {
+  justify-content: flex-end;
+}
+
+/* Card Image Wrapper */
+.cardImageWrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Card Image */
+.cardImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.cardImage.cover {
+  height: 200px;
+}
+
+.cardImage.tall {
+  height: 300px;
+}
+
+.cardImage.short {
+  height: 150px;
+}
+
+/* Card Actions */
+.cardActions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.cardActions.vertical {
+  flex-direction: column;
+}
+
+/* Card Badge */
+.cardBadge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.25rem 0.75rem;
+  background: var(--color-primary, #4f46e5);
+  color: white;
+  border-radius: var(--radius-full, 999px);
+  font-size: 0.75rem;
+  font-weight: 600;
+  z-index: 1;
+}
+
+.cardBadge.secondary {
+  background: var(--color-secondary, #f59e0b);
+}
+
+.cardBadge.success {
+  background: var(--color-success, #10b981);
+}
+
+.cardBadge.danger {
+  background: var(--color-error, #ef4444);
+}
+
+/* Card Overlay */
+.cardOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .cardOverlay {
+  opacity: 1;
+}
+
+.cardOverlay .cardTitle,
+.cardOverlay .cardDescription {
+  color: white;
+}
+
+/* Card Grid */
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Card Sizes */
+.small .cardHeader,
+.small .cardBody,
+.small .cardFooter {
+  padding: 1rem;
+}
+
+.small .cardTitle {
+  font-size: 1rem;
+}
+
+.small .cardDescription {
+  font-size: 0.875rem;
+}
+
+.large .cardHeader,
+.large .cardBody,
+.large .cardFooter {
+  padding: 2rem;
+}
+
+.large .cardTitle {
+  font-size: 1.5rem;
+}
+
+.large .cardDescription {
+  font-size: 1.125rem;
+}
+
+/* Horizontal Card Layout */
+.horizontal {
+  display: flex;
+  flex-direction: row;
+}
+
+.horizontal .cardImage {
+  width: 40%;
+  height: auto;
+  min-height: 200px;
+}
+
+.horizontal .cardContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Loading State */
+.loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  to {
+    left: 100%;
+  }
+}
+
+/* Skeleton Loader */
+.skeleton .cardTitle,
+.skeleton .cardDescription {
+  background: var(--color-gray-light, #e5e7eb);
+  border-radius: var(--radius-md, 8px);
+  color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.skeleton .cardTitle {
+  height: 1.5rem;
+  width: 60%;
+}
+
+.skeleton .cardDescription {
+  height: 1rem;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+/* Tablet Styles */
+@media (max-width: 1023px) {
+  .cardGrid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .horizontal {
+    flex-direction: column;
+  }
+
+  .horizontal .cardImage {
+    width: 100%;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+  .card {
+    border-radius: var(--radius-lg, 12px);
+  }
+
+  .cardHeader,
+  .cardBody,
+  .cardFooter {
+    padding: 1rem;
+  }
+
+  .cardTitle {
+    font-size: 1.125rem;
+  }
+
+  .cardDescription {
+    font-size: 0.9375rem;
+  }
+
+  .cardGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .cardActions {
+    flex-direction: column;
+  }
+
+  .cardActions > * {
+    width: 100%;
+  }
+
+  .cardFooter {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .cardOverlay,
+  .interactive {
+    transition: none;
+  }
+
+  .interactive:hover,
+  .elevated:hover {
+    transform: none;
+  }
+
+  .loading::after {
+    animation: none;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .card {
+    border: 2px solid currentColor;
+  }
+
+  .outlined {
+    border-width: 3px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .card {
+    box-shadow: none;
+    border: 1px solid #000;
+    page-break-inside: avoid;
+  }
+
+  .cardOverlay {
+    display: none;
+  }
+
+  .cardBadge {
+    border: 1px solid #000;
+  }
+}

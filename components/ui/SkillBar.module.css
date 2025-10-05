@@ -1,0 +1,499 @@
+/* SkillBar Component with Liquid Fill */
+
+/* Container */
+.skillBar {
+  position: relative;
+  margin-bottom: 2rem;
+  animation: fadeInUp 0.6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  opacity: 0;
+}
+
+/* Skill Header */
+.skillHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* Skill Name with Gradient */
+.skillName {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+/* Skill Icon with Pulse */
+.skillIcon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  animation: iconPulse 2s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Skill Level Text with Glow */
+.skillLevel {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  text-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+}
+
+/* Progress Bar Container with Glow */
+.progressBar {
+  position: relative;
+  width: 100%;
+  height: 12px;
+  background: rgba(30, 41, 59, 0.6);
+  border-radius: var(--radius-full);
+  overflow: visible;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Progress Bar Variants */
+.progressBar.thick {
+  height: 16px;
+}
+
+.progressBar.thin {
+  height: 8px;
+}
+
+.progressBar.extraThick {
+  height: 20px;
+}
+
+/* Progress Fill with Liquid Animation */
+.progressFill {
+  height: 100%;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
+  transition: width 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 0 20px rgba(102, 126, 234, 0.6),
+    0 0 40px rgba(102, 126, 234, 0.3);
+}
+
+/* Liquid Wave Effect */
+.progressFill::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.4) 0%,
+    transparent 50%
+  );
+  animation: liquidWave 3s ease-in-out infinite;
+}
+
+@keyframes liquidWave {
+  0%, 100% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(25%) translateY(-10%);
+  }
+}
+
+/* Shimmer Effect */
+.progressFill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  animation: shimmer 2s infinite 0.5s;
+}
+
+@keyframes shimmer {
+  to {
+    left: 100%;
+  }
+}
+
+/* Progress Fill Color Variants */
+.progressFill.primary {
+  background: var(--color-primary, #4f46e5);
+}
+
+.progressFill.secondary {
+  background: var(--color-secondary, #f59e0b);
+}
+
+.progressFill.success {
+  background: var(--color-success, #10b981);
+}
+
+.progressFill.warning {
+  background: var(--color-warning, #f59e0b);
+}
+
+.progressFill.danger {
+  background: var(--color-error, #ef4444);
+}
+
+.progressFill.gradient {
+  background: linear-gradient(
+    90deg,
+    var(--color-primary, #4f46e5) 0%,
+    var(--color-secondary, #f59e0b) 100%
+  );
+}
+
+.progressFill.gradientReverse {
+  background: linear-gradient(
+    90deg,
+    var(--color-secondary, #f59e0b) 0%,
+    var(--color-primary, #4f46e5) 100%
+  );
+}
+
+/* Striped Effect */
+.progressFill.striped {
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 1rem 1rem;
+}
+
+.progressFill.striped.animated {
+  animation: progress-stripes 1s linear infinite;
+}
+
+@keyframes progress-stripes {
+  0% {
+    background-position: 1rem 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* Glow Effect */
+.progressFill.glow {
+  box-shadow: 0 0 10px currentColor;
+}
+
+/* Skill Bar with Label Inside */
+.withInnerLabel .progressFill {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 0.75rem;
+  min-height: 24px;
+}
+
+.withInnerLabel .progressBar {
+  height: 24px;
+}
+
+.innerLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: white;
+  white-space: nowrap;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Skill Description */
+.skillDescription {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-text-light, #6b7280);
+}
+
+/* Skill Tags */
+.skillTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.skillTag {
+  padding: 0.25rem 0.75rem;
+  background: var(--color-gray-light, #f3f4f6);
+  color: var(--color-text, #1f2937);
+  border-radius: var(--radius-full, 999px);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Skill Group */
+.skillGroup {
+  margin-bottom: 2rem;
+}
+
+.skillGroupTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text, #1f2937);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-border, #e5e7eb);
+}
+
+/* Horizontal Layout */
+.horizontal {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.horizontal .skillName {
+  min-width: 120px;
+  margin-bottom: 0;
+}
+
+.horizontal .progressBar {
+  flex: 1;
+}
+
+.horizontal .skillLevel {
+  min-width: 50px;
+  text-align: right;
+}
+
+/* Compact Variant */
+.compact {
+  margin-bottom: 1rem;
+}
+
+.compact .skillHeader {
+  margin-bottom: 0.5rem;
+}
+
+.compact .skillName {
+  font-size: 0.875rem;
+}
+
+.compact .skillLevel {
+  font-size: 0.8125rem;
+}
+
+.compact .progressBar {
+  height: 6px;
+}
+
+/* Loading State */
+.loading .progressBar {
+  background: var(--color-gray-light, #e5e7eb);
+  position: relative;
+  overflow: hidden;
+}
+
+.loading .progressBar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(79, 70, 229, 0.3),
+    transparent
+  );
+  animation: loading-shimmer 1.5s infinite;
+}
+
+@keyframes loading-shimmer {
+  to {
+    left: 100%;
+  }
+}
+
+/* Interactive Skill Bar */
+.interactive {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.interactive:hover {
+  transform: translateX(4px);
+}
+
+.interactive:hover .skillName {
+  color: var(--color-primary, #4f46e5);
+}
+
+.interactive:hover .progressFill {
+  filter: brightness(1.1);
+}
+
+/* Skill Bar List */
+.skillBarList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skillBarList.compact {
+  gap: 1rem;
+}
+
+/* Years of Experience Badge */
+.experienceBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.125rem 0.5rem;
+  background: var(--color-primary-light, #eef2ff);
+  color: var(--color-primary, #4f46e5);
+  border-radius: var(--radius-full, 999px);
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+/* Certification Badge */
+.certified::after {
+  content: '✓';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  background: var(--color-success, #10b981);
+  color: white;
+  border-radius: 50%;
+  font-size: 0.625rem;
+  font-weight: 700;
+  margin-left: 0.5rem;
+}
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+  .skillBar {
+    margin-bottom: 1.25rem;
+  }
+
+  .skillName {
+    font-size: 0.875rem;
+  }
+
+  .skillLevel {
+    font-size: 0.8125rem;
+  }
+
+  .horizontal {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .horizontal .skillName {
+    min-width: auto;
+  }
+
+  .horizontal .skillLevel {
+    text-align: left;
+  }
+
+  .withInnerLabel .progressBar {
+    height: 28px;
+  }
+
+  .innerLabel {
+    font-size: 0.6875rem;
+  }
+
+  .skillGroupTitle {
+    font-size: 1rem;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .progressFill,
+  .interactive {
+    transition: none;
+  }
+
+  .progressFill::before,
+  .progressFill.striped.animated,
+  .loading .progressBar::after {
+    animation: none;
+  }
+
+  .interactive:hover {
+    transform: none;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .progressBar {
+    border: 1px solid currentColor;
+  }
+
+  .progressFill {
+    border: 1px solid transparent;
+  }
+
+  .skillName,
+  .skillLevel {
+    font-weight: 700;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .progressBar {
+    border: 1px solid #000;
+    background: white;
+  }
+
+  .progressFill {
+    background: #000 !important;
+  }
+
+  .progressFill::before,
+  .progressFill.striped {
+    background: none !important;
+  }
+
+  .skillDescription {
+    page-break-inside: avoid;
+  }
+}

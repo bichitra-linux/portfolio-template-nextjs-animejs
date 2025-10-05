@@ -1,0 +1,234 @@
+{
+  "personal": {
+    "name": "John Doe",
+    "title": "Senior Frontend Developer",
+    "email": "john.doe@example.com",
+    "phone": "+1 (555) 123-4567",
+    "location": "San Francisco, CA",
+    "website": "https://johndoe.dev",
+    "bio": "Passionate Senior Frontend Developer with over 8 years of experience creating engaging and performant web applications. I specialize in React, Vue.js, and modern JavaScript frameworks with a focus on user experience and accessibility.",
+    "avatar": "https://via.placeholder.com/300x300?text=Profile"
+  },
+  "social": {
+    "linkedin": "https://linkedin.com/in/johndoe",
+    "github": "https://github.com/johndoe",
+    "twitter": "https://twitter.com/johndoe",
+    "email": "mailto:john.doe@example.com"
+  },
+  "stats": {
+    "projects": 50,
+    "experience": 8,
+    "clients": 25
+  },
+  "skills": [
+    {
+      "name": "JavaScript",
+      "percentage": 95,
+      "category": "frontend"
+    },
+    {
+      "name": "React",
+      "percentage": 90,
+      "category": "frontend"
+    },
+    {
+      "name": "Vue.js",
+      "percentage": 85,
+      "category": "frontend"
+    },
+    {
+      "name": "TypeScript",
+      "percentage": 88,
+      "category": "frontend"
+    },
+    {
+      "name": "CSS/SASS",
+      "percentage": 92,
+      "category": "frontend"
+    },
+    {
+      "name": "HTML5",
+      "percentage": 96,
+      "category": "frontend"
+    },
+    {
+      "name": "Node.js",
+      "percentage": 80,
+      "category": "backend"
+    },
+    {
+      "name": "Express.js",
+      "percentage": 78,
+      "category": "backend"
+    },
+    {
+      "name": "MongoDB",
+      "percentage": 75,
+      "category": "backend"
+    },
+    {
+      "name": "PostgreSQL",
+      "percentage": 70,
+      "category": "backend"
+    },
+    {
+      "name": "Git",
+      "percentage": 88,
+      "category": "tools"
+    },
+    {
+      "name": "Webpack",
+      "percentage": 82,
+      "category": "tools"
+    },
+    {
+      "name": "Docker",
+      "percentage": 76,
+      "category": "tools"
+    },
+    {
+      "name": "AWS",
+      "percentage": 74,
+      "category": "tools"
+    }
+  ],
+  "timeline": [
+    {
+      "id": 1,
+      "type": "work",
+      "company": "TechCorp Inc.",
+      "position": "Senior Frontend Developer",
+      "period": "2021 - Present",
+      "location": "San Francisco, CA",
+      "description": "Lead frontend development for enterprise applications serving 100K+ users. Architected scalable React applications with micro-frontend architecture.",
+      "achievements": [
+        "Improved application performance by 40% through code splitting and lazy loading",
+        "Led a team of 5 developers in migrating legacy jQuery codebase to React",
+        "Implemented comprehensive testing strategy with 90% code coverage"
+      ],
+      "technologies": ["React", "TypeScript", "Redux", "GraphQL", "Jest", "Cypress"]
+    },
+    {
+      "id": 2,
+      "type": "work",
+      "company": "WebSolutions LLC",
+      "position": "Frontend Developer",
+      "period": "2019 - 2021",
+      "location": "San Francisco, CA",
+      "description": "Developed responsive web applications for various clients across different industries. Specialized in Vue.js and modern JavaScript frameworks.",
+      "achievements": [
+        "Built 15+ client projects with 100% on-time delivery",
+        "Reduced development time by 30% through reusable component library",
+        "Mentored 3 junior developers and conducted code reviews"
+      ],
+      "technologies": ["Vue.js", "JavaScript", "SASS", "Node.js", "Express", "MongoDB"]
+    },
+    {
+      "id": 3,
+      "type": "work",
+      "company": "StartupXYZ",
+      "position": "Full Stack Developer",
+      "period": "2017 - 2019",
+      "location": "San Francisco, CA",
+      "description": "Full-stack development for a fast-growing SaaS platform. Worked closely with product team to implement new features and optimize user experience.",
+      "achievements": [
+        "Developed MVP that attracted 10K+ users in first 6 months",
+        "Implemented real-time features using WebSocket technology",
+        "Optimized database queries reducing load times by 50%"
+      ],
+      "technologies": ["React", "Node.js", "PostgreSQL", "Redis", "AWS", "Docker"]
+    },
+    {
+      "id": 4,
+      "type": "education",
+      "institution": "University of California, Berkeley",
+      "degree": "Bachelor of Science in Computer Science",
+      "period": "2013 - 2017",
+      "location": "Berkeley, CA",
+      "description": "Graduated Magna Cum Laude with focus on software engineering and web technologies. Active member of the Computer Science Society.",
+      "achievements": [
+        "GPA: 3.8/4.0",
+        "Dean's List for 6 semesters",
+        "President of Web Development Club"
+      ],
+      "technologies": ["Java", "Python", "C++", "JavaScript", "MySQL", "Git"]
+    },
+    {
+      "id": 5,
+      "type": "work",
+      "company": "Freelance",
+      "position": "Web Developer",
+      "period": "2015 - 2017",
+      "location": "Remote",
+      "description": "Freelance web development projects for small businesses and startups. Gained experience in client communication and project management.",
+      "achievements": [
+        "Completed 20+ projects with 5-star client ratings",
+        "Specialized in responsive design and e-commerce solutions",
+        "Built long-term relationships with returning clients"
+      ],
+      "technologies": ["HTML", "CSS", "JavaScript", "jQuery", "PHP", "WordPress"]
+    }
+  ],
+  "portfolio": [
+    {
+      "id": 1,
+      "title": "E-Commerce Platform",
+      "description": "Modern e-commerce platform built with React and Node.js, featuring real-time inventory management and payment processing.",
+      "image": "https://via.placeholder.com/400x250?text=E-Commerce+Platform",
+      "technologies": ["React", "Node.js", "MongoDB", "Stripe", "Redux"],
+      "liveUrl": "https://example.com",
+      "githubUrl": "https://github.com/johndoe/ecommerce",
+      "category": "web-app"
+    },
+    {
+      "id": 2,
+      "title": "Task Management App",
+      "description": "Collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
+      "image": "https://via.placeholder.com/400x250?text=Task+Management+App",
+      "technologies": ["Vue.js", "Express.js", "PostgreSQL", "Socket.io"],
+      "liveUrl": "https://example.com",
+      "githubUrl": "https://github.com/johndoe/taskmanager",
+      "category": "web-app"
+    },
+    {
+      "id": 3,
+      "title": "Weather Dashboard",
+      "description": "Interactive weather dashboard with beautiful visualizations, forecasts, and location-based weather data using modern APIs.",
+      "image": "https://via.placeholder.com/400x250?text=Weather+Dashboard",
+      "technologies": ["JavaScript", "Chart.js", "Weather API", "CSS3"],
+      "liveUrl": "https://example.com",
+      "githubUrl": "https://github.com/johndoe/weather-dashboard",
+      "category": "dashboard"
+    },
+    {
+      "id": 4,
+      "title": "Portfolio Website",
+      "description": "Responsive portfolio website with smooth animations, optimized performance, and modern design principles.",
+      "image": "https://via.placeholder.com/400x250?text=Portfolio+Website",
+      "technologies": ["HTML5", "CSS3", "JavaScript", "Anime.js"],
+      "liveUrl": "https://example.com",
+      "githubUrl": "https://github.com/johndoe/portfolio",
+      "category": "website"
+    },
+    {
+      "id": 5,
+      "title": "Data Visualization Tool",
+      "description": "Interactive data visualization tool for business analytics with customizable charts and real-time data updates.",
+      "image": "https://via.placeholder.com/400x250?text=Data+Visualization",
+      "technologies": ["React", "D3.js", "Node.js", "WebSocket"],
+      "liveUrl": "https://example.com",
+      "githubUrl": "https://github.com/johndoe/dataviz",
+      "category": "dashboard"
+    },
+    {
+      "id": 6,
+      "title": "Mobile App Landing",
+      "description": "Modern landing page for mobile application with smooth scrolling animations and responsive design.",
+      "image": "https://via.placeholder.com/400x250?text=Mobile+App+Landing",
+      "technologies": ["HTML5", "SASS", "JavaScript", "AOS"],
+      "liveUrl": "https://example.com",
+      "githubUrl": "https://github.com/johndoe/app-landing",
+      "category": "website"
+    }
+  ]
+}
